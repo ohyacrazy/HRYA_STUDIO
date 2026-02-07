@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="https://i.postimg.cc/gJTRs5qq/image-removebg-preview-(8).png' border='0" type="image/png">
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Vector Rush | HRYA STUDIO</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+<style>
+:root{--bg:#04050b;--panel:#0b0f1e;--ink:#eef1ff;--accent:#7c7cff;--cyan:#3ef0ff}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Inter;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:-10px;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:22px 48px;background:rgba(0a0f22); border-radius: 0px; border-color: rgba(32, 1, 82, 0.697); border-width: 3px; border-style: solid; backdrop-filter:blur(16px) ; padding-top: 10px ; padding-bottom: 10px; }
+nav .brand{ display:flex;align-items:center;gap:14px;font-family:Orbitron;letter-spacing:.3em}
+nav .brand:hover{  transform: scale(1.1);}
+nav img{width:42px;height:42px}
+nav a{color:var(--accent);text-decoration:none;margin-left:28px;}
+nav a:hover {background:linear-gradient( 135deg,var(--accent),var(--cyan));background-clip: text;-webkit-background-clip: text;-webkit-text-fill-color:  ( rgb(51, 3, 173)) ;opacity:0.5 ; transform: scale(1.1); border-radius: 5px; border: #7c7cff;}
+nav a {transition: all 0.3s ease;}
+  nav a:hover {
+    transform: scale(1.2);
+  }
+
+/* INTRO */
+#intro{position:fixed;inset:0;z-index:2000;display:grid;place-items:center;background:black}
+#intro h1{font-family:Orbitron;font-size:80px;letter-spacing:.4em}
+
+/* LOCK */
+#lock{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;background:radial-gradient(1200px 600px at 50% 0,rgba(124,124,255,.2),#04050b 60%);backdrop-filter:blur(16px)}
+.lock-box{max-width:460px;background:linear-gradient(180deg,#0a0f22,#070b18);padding:48px;border-radius:36px;box-shadow:0 0 120px rgba(124,124,255,.25)}
+.lock-box h2{font-family:Orbitron;letter-spacing:.25em;text-align:center}
+
+/* PARALLAX BG */
+.parallax{position:fixed;inset:-15%;z-index:-1;filter:blur(18px)}
+.parallax img{position:absolute;width:0%;height:0%;object-fit:cover;opacity:.35}
+
+/* HERO */
+.hero{min-height:100vh;display:grid;place-items:center;position:relative}
+.hero::before{content:"";position:absolute;inset:0;background:url('https://corresponding-aqua-eqzu34kqyy.edgeone.app/HRYA.png') center/820px no-repeat;opacity:.12}
+.hero-inner{text-align:center;max-width:1200px;padding:10px 10px}
+.hero h1{font-family:Orbitron;font-size:clamp(70px,10vw,140px);letter-spacing:.35em;text-shadow:0 0 90px rgba(124,124,255,1)}
+.hero p{max-width:820px;margin:30px auto;font-size:22px}
+
+/* SLIDER */
+
+
+section{padding:180px 24px}
+.section-title{text-align:center;font-family:Orbitron;letter-spacing:.35em;font-size:40px;margin-bottom:120px ; color: #7c7cff;}
+
+/* CREATORS */
+.creators{display:grid;grid-template-columns:1fr 1.2fr 1fr;gap:60px;max-width:1300px;margin:auto;perspective:1200px}
+.creator{position:relative;background:linear-gradient(180deg,#0a0f22,#080c18);border-radius:44px;padding:28px;text-align:center;transform-style:preserve-3d;transition:.2s}
+.creator img{width:100%;border-radius:36px;margin-bottom:26px}
+.creator h3{font-family:Orbitron;letter-spacing:.25em}
+.creator a{display:inline-block;margin-top:18px;padding:14px 28px;border-radius:18px;background:linear-gradient(135deg,var(--accent),var(--cyan));color:#000;font-weight:800;text-decoration:none}
+.creator :hover img{background:linear-gradient(180deg,rgba(124,124,255,.25),rgba(62,240,255,.25))}
+
+
+
+.role{position:absolute;top:-18px;right:20px;background:#0b0f1e;padding:10px 18px;border-radius:20px;font-size:12px;letter-spacing:.2em;opacity:0;transform:translateY(10px)}
+.creator.center .role{position:absolute;top:-18px;right:20px;background:#0b0f1e;padding:10px 18px;border-radius:20px;font-size:12px;letter-spacing:.2em;opacity:0;transform:translateY(10px)}
+.creator:hover .role{opacity:1;transform:translateY(0)}
+
+/* ABOUT */
+.panel{max-width:1200px;margin:auto;background:linear-gradient(180deg,#0a0f22,#080c18);border-radius:60px;padding:110px}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;margin-top:80px}
+.card{background:linear-gradient(180deg,#0e142b,#0a0f1e);border-radius:40px;padding:40px}
+
+/* REPORT */
+.form{max-width:760px;margin:auto;background:linear-gradient(180deg,#0a0f22,#080c18);padding:80px;border-radius:48px}
+.field{margin:24px 0}
+input,textarea{width:100%;padding:18px;border-radius:20px;border:1px solid rgba(124,124,255,.35);background:#070b16;color:var(--ink);font-size:16px}
+
+footer{text-align:center;padding:80px 20px;opacity:.6}
+
+
+.creator:hover {
+    background:linear-gradient(180deg,rgba(124,124,255,.25),rgba(62,240,255,.25));
+    
+  }
+
+
+
+  .btn {
+  display:inline-block;
+  padding:18px 36px;
+  border-radius:24px;
+  background:linear-gradient(135deg,var(--accent),var(--cyan));
+  color:#000;
+  font-weight:900;
+  text-decoration:none;
+  transition:all 0.3s ease;
+}
+
+.btn:hover {
+  transform:scale(1.05);
+  box-shadow:0 0 30px rgba(124,124,255,0.6);
+}
+.game-card img, .group-card img {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.game-card img:hover, .group-card img:hover {
+  transform: scale(1.05);
+  box-shadow:0 0 50px rgba(124,124,255,0.4);
+}
+.idb{font-family:Orbitron;font-size:clamp(10px,120vw,60px);letter-spacing:.35em;text-shadow:0 0 90px rgb(167, 0, 193) ;color: #7c7cff;}
+</style>
+</head>
+<body>
+
+<div id="intro"><h1>HRYA</h1></div>
+
+<nav>
+  <div class="brand"><img src="https://i.postimg.cc/SN20gMqm/HRYA.png">HRYA STUDIO</div>
+  <div > 
+        <a href="#idbs">About</a>
+    <a href="#creators">Creators</a>
+    <a href="#group">Group</a>
+    <a href="#our-games">Games</a>
+        <a href="#report">Report</a>
+
+
+  </div>
+</nav>
+
+
+<audio id="hoverSound" src="https://codeskulptor-demos.commondatastorage.googleapis.com/pang/pop.mp3"></audio>
+ 
+
+
+
+
+
+
+
+
+
+
+
+<div class="hero">
+  <div class="hero-inner">
+        <div class="slider">
+      <div class="slide">
+
+    <section id="idbs">
+
+  <h2 class = "idb">WHO WE ARE</h2>
+  <p>
+<b>Welcome to HRYA-STUDIO</b> 
+We are creators of immersive worlds, where imagination meets precision.<br><br>
+ At HRYA STUDIO, we craft unforgettable experiences through powerful storytelling, refined artistry, and seamless performance.<br><br>
+Step into a realm of adventure, mystery, and excitement  where every detail is intentional, every moment is meaningful, and every journey leaves a lasting impact.<br><br>
+  </p>
+</div>
+    </div>
+    </div>
+
+  </div>
+</div>
+
+</section >
+<!-- OUR GAMES -->
+<section id="our-games">
+  <h1 class="section-title">OUR GAMES </h1> 
+  
+  <div class="games-container" style="display:flex;justify-content:center;gap:40px;flex-wrap:wrap;">
+    <!-- First Game -->
+    <a href="https://www.roblox.com/games/71421309938080/Vector-Rush" target="_blank" class="game-card" style="flex:1 1 280px;max-width:300px;text-align:center;background:linear-gradient(180deg,#0a0f22,#080c18);border-radius:24px;padding:20px;text-decoration:none;color:var(--ink);transition:all 0.3s ease;">
+      <img src="vector.png" style="width:100%;border-radius:24px;box-shadow:0 0 40px rgba(124,124,255,0.4);transition:transform 0.4s ease,box-shadow 0.4s ease;">
+      <h3 style="margin-top:20px;font-family:Orbitron;font-size:20px;letter-spacing:.2em;color:var(--accent);">Vector Rush</h3>
+      <span class="btn">Play Now</span>
+    </a>
+
+    <!-- Second Game -->
+    <a href="#" class="game-card" style="flex:1 1 280px;max-width:300px;text-align:center;background:linear-gradient(180deg,#0a0f22,#080c18);border-radius:24px;padding:20px;text-decoration:none;color:var(--ink);transition:all 0.3s ease;">
+      <img src="non.png" style="width:100%;border-radius:24px;box-shadow:0 0 40px rgba(124,124,255,0.4);transition:transform 0.4s ease,box-shadow 0.4s ease;">
+      <h3 style="margin-top:20px;font-family:Orbitron;font-size:20px;letter-spacing:.2em;color:var(--accent);">Coming Soon</h3>
+      <span class="btn">Play Now</span>
+    </a>
+
+    <!-- Third Game -->
+    <a href="#" class="game-card" style="flex:1 1 280px;max-width:300px;text-align:center;background:linear-gradient(180deg,#0a0f22,#080c18);border-radius:24px;padding:20px;text-decoration:none;color:var(--ink);transition:all 0.3s ease;">
+      <img src="non.png" style="width:100%;border-radius:24px;box-shadow:0 0 40px rgba(124,124,255,0.4);transition:transform 0.4s ease,box-shadow 0.4s ease;">
+      <h3 style="margin-top:20px;font-family:Orbitron;font-size:20px;letter-spacing:.2em;color:var(--accent);">Coming Soon</h3>
+      <span class="btn">Play Now</span>
+    </a>
+  </div>
+
+  <div class="game-stats" style="margin-top:40px;text-align:center;">
+    <p class="total-visits" style="font-family:Orbitron;font-size:28px;color:var(--accent);margin:6px 0;">Total Visits 2T</p>
+    <p class="monthly-visits" style="font-family:Orbitron;font-size:22px;color:rgba(238,241,255,0.7);margin:6px 0;">Monthly Visits 2B</p>
+  </div>
+</section>
+
+
+<!-- CREATORS -->
+<section id="creators">
+  <h2 class="section-title">CREATORS</h2>
+  <div class="creators">
+        <div class="creator"><span class="role">CO‑OWNER</span><img src="youssef.png"><h3>YOUSSEF</h3> <a href="youssef.html">View Page</a></div>
+    <div class="creator center"><span class="role">OWNER</span><img src="nexus.png"><h3>NEXUS</h3><a href="nexus.html">View Page</a></div>
+    <div class="creator"><span class="role">CO‑OWNER</span><img src="luna.png"><h3>LUNA</h3><a href="luna.html">View Page</a></div>
+  </div>
+</section>
+
+
+
+<!-- GAME & GROUP -->
+<section id="group">
+  <div class="panel" style="display:flex;flex-wrap:wrap;justify-content:center;gap:60px;max-width:1200px;margin:auto;">
+    
+ 
+    <!-- GROUP -->
+    <div class="group-card" style="flex:1 1 350px;max-width:400px;text-align:center;">
+      <h2 style="font-family:Orbitron;letter-spacing:.35em;font-size:32px;margin-bottom:24px;">HRYA STUDIO GROUP</h2>
+      <img src="https://i.postimg.cc/KYDqQnzy/download.png" style="width:80%;max-width:300px;border-radius:32px;margin-bottom:20px;">
+      <a href="https://www.roblox.com/communities/787116941/HRYA-STUDIO#!/about" target="_blank" class="btn">View Group</a>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+<!-- REPORT -->
+<section id="report">
+  <h2 class="section-title">REPORT</h2>
+  <div class="form">
+    <div class="field"><input id="ruser" placeholder="Roblox Username"></div>
+    <div class="field"><input id="rgmail" placeholder="Gmail"></div>
+    <div class="field"><textarea id="rdesc" placeholder="Report description"></textarea></div>
+    <button onclick="sendReport()" style="width:100%;margin-top:22px;padding:18px;border-radius:22px;background:linear-gradient(135deg,var(--accent),var(--cyan));font-weight:900">Send Report</button>
+    <small id="rstatus"></small>
+    
+  </div>
+</section>
+
+<footer>All Rights For HRYA STUDIO
+</footer>
+
+<script>
+/* INTRO */
+gsap.to('#intro',{opacity:0,duration:1.6,delay:1.4,onComplete:()=>intro.remove()});
+
+/* SLIDER */
+
+/* PARALLAX */
+document.addEventListener('mousemove',e=>{
+  const x=(e.clientX/window.innerWidth-.5)*50;
+  const y=(e.clientY/window.innerHeight-.5)*50;
+  p1.style.transform=`translate(${x}px,${y}px)`;
+  p2.style.transform=`translate(${-x}px,${-y}px)`;
+});
+
+/* 3D TILT */
+document.querySelectorAll('.creator').forEach(c=>{
+  c.addEventListener('mousemove',e=>{
+    const r=c.getBoundingClientRect();
+    const x=((e.clientX-r.left)/r.width-.5)*20;
+    const y=((e.clientY-r.top)/r.height-.5)*-20;
+    c.style.transform=`rotateY(${x}deg) rotateX(${y}deg) translateZ(20px)`;
+  });
+  c.addEventListener('mouseleave',()=>c.style.transform='');
+});
+
+
+
+ const links = document.querySelectorAll('nav a');
+  const sound = document.getElementById('hoverSound');
+   links.forEach(link => {
+    link.addEventListener('mouseenter', () => {
+      sound.currentTime = 0; // rewind to start
+      sound.play(); // play sound
+    });
+  });
+
+
+
+  
+/* GSAP SCROLL */
+gsap.utils.toArray('section').forEach(sec=>{
+  gsap.from(sec,{opacity:0,y:120,scrollTrigger:{trigger:sec,start:'top 80%'},duration:1.4,ease:'power4.out'});
+});
+
+/* ACCESS CHECK */
+async function requestAccess(){
+    if(!roblox.value){status.textContent='Please enter a username';return}
+    try{
+        const res=await fetch(`https://users.roblox.com/v1/users/search?keyword=${encodeURIComponent(roblox.value)}&limit=1`);
+        const data=await res.json();
+        if(data.data.length>0){gsap.to('#lock',{opacity:0,duration:1.2,onComplete:()=>lock.remove()});}
+        else{status.textContent='User not found'}
+    }catch{status.textContent='Network blocked – backend required'}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let canSendReport = true; // flag to control timing
+
+async function sendReport(){
+  if (!canSendReport) {
+    rstatus.textContent = "Please wait 10 seconds before sending another report.";
+    return;
+  }
+
+  if (!ruser.value || !rgmail.value) {
+    rstatus.textContent = 'Fill required fields';
+    return;
+  }
+
+  try {
+    // Disable further reports for 10 seconds
+    canSendReport = false;
+    rstatus.textContent = 'Sending report...';
+    document.querySelector('#report button').disabled = true;
+    document.querySelector('#report button').style.opacity = 0.5;
+
+    await fetch('https://discord.com/api/webhooks/1469356540216738005/yhQIG0BaxjkxdZd6Fj-Osr6qRIB81hsSnQxxWWEdd-korVFimkKkiPL2w0gkQdT8wXYk', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({
+        content: `REPORT\nUser: ${ruser.value}\nGmail: ${rgmail.value}\nDesc: ${rdesc.value}`
+      })
+    });
+
+    rstatus.textContent = 'Report sent successfully!';
+    
+    // Wait 10 seconds before allowing another report
+    setTimeout(() => {
+      canSendReport = true;
+      document.querySelector('#report button').disabled = false;
+      document.querySelector('#report button').style.opacity = 1;
+      rstatus.textContent = '';
+    }, 10000);
+
+  } catch (err) {
+    rstatus.textContent = 'Network blocked – backend required';
+    canSendReport = true;
+    document.querySelector('#report button').disabled = false;
+    document.querySelector('#report button').style.opacity = 1;
+  }
+}
+
+
+// Animate GAME & GROUP cards on scroll
+gsap.from("#game-group .game-card", {
+  opacity: 0,
+  y: 60,
+  duration: 1.2,
+  scrollTrigger: {
+    trigger: "#game-group",
+    start: "top 80%"
+  },
+  ease: "power3.out"
+});
+
+gsap.from("#game-group .group-card", {
+  opacity: 0,
+  y: 60,
+  duration: 1.2,
+  scrollTrigger: {
+    trigger: "#game-group",
+    start: "top 80%"
+  },
+  delay: 0.3,
+  ease: "power3.out"
+});
+
+</script>
+</body>
+</html>

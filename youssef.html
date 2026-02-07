@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>YOUSSEF | HRYA STUDIO</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+:root{--bg:#04050b;--ink:#eef1ff;--accent:#7c7cff;--cyan:#3ef0ff}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:Inter;
+}
+
+/* NAV */
+nav{
+  position:fixed;
+  top:0;left:0;right:0;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:22px 48px;
+  background:rgba(4,5,11,.6);
+  backdrop-filter:blur(16px);
+}
+nav a{
+  color:var(--ink);
+  text-decoration:none;
+  font-weight:600;
+}
+nav a:hover{
+  background:linear-gradient(135deg,var(--accent),var(--cyan));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+/* PAGE */
+.page{
+  min-height:100vh;
+  padding:160px 80px;
+}
+.profile{
+  max-width:1400px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1.5fr;
+  gap:80px;
+  align-items:center;
+}
+.profile img{
+  width:100%;
+  border-radius:40px;
+  box-shadow:0 0 120px rgba(124,124,255,.4);
+}
+.profile h1{
+  font-family:Orbitron;
+  letter-spacing:.35em;
+  margin-bottom:30px;
+}
+.profile p{
+  font-size:20px;
+  line-height:1.8;
+  opacity:.9;
+}
+.profile :hover  p{  transform:scale(1.1);
+  box-shadow:0 0 50px rgba(124,124,255,0.6) ;
+}
+.profile h1{padding: 9px;}
+.profile p{
+   border-radius: 12px;
+   padding: 8px;
+}
+.profile :hover h1{  transform:scale(1.1);
+}
+.btn{
+  display:inline-block;
+  margin-top:30px;
+  padding:16px 38px;
+  border-radius:22px;
+  background:linear-gradient(135deg,var(--accent),var(--cyan));
+  color:#000;
+  font-weight:900;
+  text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="index.html">← Home</a>
+  <strong>HRYA STUDIO</strong>
+</nav>
+
+<div class="page">
+  <div class="profile">
+<img src="youssef.png">
+    <div>
+      <h1>YOUSSEF</h1>
+      <p>
+<b>Hi ladies and gentlemen</b><br><br>
+
+I’m Youssef, Co-Owner of HRYA-STUDIO<br><br>
+
+a Full-Stack Developer, Web Developer, Main Builder, and Scripter responsible for the technical foundation, structure, and execution behind our projects. I bridge the gap between creativity and technology, turning ideas into functional, scalable, and high-performance experiences.
+
+I work across both Back-End and Front-End development, designing systems, architectures, and interfaces that are clean, optimized, and reliable. Whether it’s building robust game mechanics, developing complex scripts, or structuring interactive environments, I ensure everything runs smoothly and efficiently.<br><br>
+
+As the Main Builder, I construct detailed, well-structured, and immersive environments that bring our worlds to life. I focus on precision, realism, and playability, making sure every build not only looks good but also feels intuitive and engaging for players.
+
+My approach blends technical expertise with problem-solving and innovation. I analyze, refine, and optimize constantly, ensuring that every system, script, and structure meets professional standards and delivers a seamless experience.<br><br>
+
+At HRYA-STUDIO, I develop, build, and refine our projects helping transform ideas into stable, polished, and unforgettable experiences for our players.. ❄️
+      </p>
+
+      <a class="btn" href="https://www.roblox.com/users/8836168362/profile" target="_blank">
+        Follow Roblox Page
+      </a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

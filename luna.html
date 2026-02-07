@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>LUNA | HRYA STUDIO</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+:root{--bg:#04050b;--ink:#eef1ff;--accent:#7c7cff;--cyan:#3ef0ff}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:Inter;
+}
+
+/* NAV */
+nav{
+  position:fixed;
+  top:0;left:0;right:0;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:22px 48px;
+  background:rgba(4,5,11,.6);
+  backdrop-filter:blur(16px);
+}
+nav a{
+  color:var(--ink);
+  text-decoration:none;
+  font-weight:600;
+}
+nav a:hover{
+  background:linear-gradient(135deg,var(--accent),var(--cyan));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+/* PAGE */
+.page{
+  min-height:100vh;
+  padding:160px 80px;
+}
+.profile{
+  max-width:1400px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1.5fr;
+  gap:80px;
+  align-items:center;
+}
+.profile img{
+  width:100%;
+  border-radius:40px;
+  box-shadow:0 0 120px rgba(124,124,255,.4);
+}
+.profile h1{
+  font-family:Orbitron;
+  letter-spacing:.35em;
+  margin-bottom:30px;
+}
+.profile p{
+  font-size:20px;
+  line-height:1.8;
+  opacity:.9;
+}
+.profile h1{padding: 9px;}
+.profile p{
+   border-radius: 12px;
+   padding: 8px;
+}
+.profile :hover h1{  transform:scale(1.1);
+}
+.profile :hover p{  transform:scale(1.1);
+  box-shadow:0 0 50px rgba(124,124,255,0.6) ;
+}
+.btn{
+  display:inline-block;
+  margin-top:30px;
+  padding:16px 38px;
+  border-radius:22px;
+  background:linear-gradient(135deg,var(--accent),var(--cyan));
+  color:#000;
+  font-weight:900;
+  text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="index.html">← Home</a>
+  <strong>HRYA STUDIO</strong>
+</nav>
+
+<div class="page">
+  <div class="profile">
+ <img src="luna.png">
+
+    <div>
+      <h1>LUNA</h1>
+      <p>
+<b>hii sweeties</b><br><br>
+
+I’m Luna, Co-Owner, Co-Founder, and Art Director of HRYA-STUDIO<br><br>
+
+ the creative core that shapes the studio’s vision, identity, and artistic direction. I lead the visual narrative of our projects, ensuring that every experience carries a strong, cohesive, and emotionally powerful aesthetic.
+
+I work across multiple creative fields including Graphic Design, Visual Direction, Editing, Concept Development, and Creative Planning, alongside foundational experience in scripting. I craft polished visuals, refine artistic concepts, and build compelling atmospheres that transform ideas into fully realized creative experiences.<br><br>
+
+I excel at managing multiple creative processes at once, balancing precision with imagination while maintaining clarity, consistency, and artistic depth. My approach blends strategic thinking with artistic intuition, allowing me to deliver visually striking and meaningful results.
+
+Beyond my technical and creative roles, I am also a source of energy, motivation, and inspiration for the team  keeping the spirit of HRYA-STUDIO alive with passion, positivity, and forward momentum.<br><br>
+
+As an Art Director, my mission is to define mood, composition, color, and storytelling through visuals, collaborating closely with designers, builders, and developers to ensure every world we create feels immersive, intentional, and unforgettable.
+
+At HRYA-STUDIO, I don’t just shape visuals  I shape experiences, emotions, and creative direction that players truly connect with.. 💗
+      </p>
+
+      <a class="btn" href="https://www.roblox.com/users/4777843035/profile" target="_blank">
+        Follow Roblox Page
+      </a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

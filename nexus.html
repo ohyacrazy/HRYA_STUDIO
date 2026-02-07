@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NEXUS | HRYA STUDIO</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+:root{--bg:#04050b;--ink:#eef1ff;--accent:#7c7cff;--cyan:#3ef0ff}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:Inter;
+}
+
+/* NAV */
+nav{
+  position:fixed;
+  top:0;left:0;right:0;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:22px 48px;
+  background:rgba(4,5,11,.6);
+  backdrop-filter:blur(16px);
+}
+nav a{
+  color:var(--ink);
+  text-decoration:none;
+  font-weight:600;
+}
+nav a:hover{
+  background:linear-gradient(135deg,var(--accent),var(--cyan));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+/* PAGE */
+.page{
+  min-height:100vh;
+  padding:160px 80px;
+}
+.profile{
+  max-width:1400px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1.5fr;
+  gap:80px;
+  align-items:center;
+}
+.profile img{
+  width:100%;
+  border-radius:40px;
+  box-shadow:0 0 120px rgba(124,124,255,.4);
+}
+.profile h1{
+  font-family:Orbitron;
+  letter-spacing:.35em;
+  margin-bottom:30px;
+  
+}
+.profile h1{padding: 9px;}
+.profile p{
+   border-radius: 12px;
+   padding: 8px;
+}
+.profile :hover h1{  transform:scale(1.1);
+}
+.profile :hover p{  transform:scale(1.1);
+  box-shadow:0 0 50px rgba(124,124,255,0.6) ;
+}
+.profile p{
+  font-size:20px;
+  line-height:1.8;
+  opacity:.9;
+}
+.btn{
+  display:inline-block;
+  margin-top:30px;
+  padding:16px 38px;
+  border-radius:22px;
+  background:linear-gradient(135deg,var(--accent),var(--cyan));
+  color:#000;
+  font-weight:900;
+  text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="index.html">← Home</a>
+  <strong>HRYA STUDIO</strong>
+</nav>
+
+<div class="page">
+  <div class="profile">
+<img src="nexus.png">
+    <div>
+      <h1>NEXUS</h1>
+      <p>
+<b>Hello amazing person </b><br><br>
+
+I’m Nexus, Content Creator, Founder & Owner of HRYA-STUDIO <br><br>
+
+a creative studio focused on building high-quality, immersive Roblox experiences.
+I am a full-stack Roblox Creator and Content Creator, working across multiple disciplines including Graphic Design, UI/UX, Building, Scripting, Game Development, and VFX. I design polished visuals, craft optimized systems, and construct detailed, engaging environments that bring ideas to life.<br><br>
+
+My work blends creativity with technical precision, ensuring that every project is not only visually stunning but also smooth, performant, and enjoyable to play. From concept to execution, I handle everything: brainstorming, designing, scripting, building, testing, and refining.
+
+As a Designer, Builder, Developer, and Roblox Specialist, my goal is to create experiences that stand out, feel professional, and leave a lasting impact on players. I am constantly learning, experimenting, and pushing my skills further to elevate my craft and my studio.<br><br>
+
+At HRYA-STUDIO, I aim to build worlds, tell stories, and create gameplay that players truly connect with. 🕊️ 
+      </p>
+
+      <a class="btn" href="https://www.roblox.com/users/4335867007/profile" target="_blank">
+        Follow Roblox Page
+      </a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
